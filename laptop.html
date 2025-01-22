@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laptop Price Prediction</title>
+</head>
+<body>
+    <h1>Laptop Price Prediction</h1>
+    <form method="POST" action="/predict_laptop">
+        <label for="brand">Brand:</label>
+        <select name="brand" id="brand">
+            {% for brand in brands %}
+                <option value="{{ brand }}">{{ brand }}</option>
+            {% endfor %}
+        </select>
+        <br>
+        <label for="type">Type:</label>
+        <select name="type" id="type">
+            {% for type in types %}
+                <option value="{{ type }}">{{ type }}</option>
+            {% endfor %}
+        </select>
+        <br>
+        <label for="ram">RAM Size:</label>
+        <select name="ram" id="ram">
+            {% for ram in ram_sizes %}
+                <option value="{{ ram }}">{{ ram }} GB</option>
+            {% endfor %}
+        </select>
+        <br>
+        <label for="weight">Weight (kg):</label>
+        <input type="number" name="weight" id="weight" step="0.1">
+        <br>
+        <label for="touchscreen">Touchscreen:</label>
+        <select name="touchscreen" id="touchscreen">
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select>
+        <br>
+        <label for="ips">IPS Display:</label>
+        <select name="ips" id="ips">
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select>
+        <br>
+        <label for="fullhd">Full HD:</label>
+        <select name="fullhd" id="fullhd">
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select>
+        <br>
+        <label for="ppi">PPI:</label>
+        <input type="number" name="ppi" id="ppi" step="0.1">
+        <br>
+        <label for="cpu_brand">CPU Brand:</label>
+        <select name="cpu_brand" id="cpu_brand">
+            {% for cpu_brand in cpu_brands %}
+                <option value="{{ cpu_brand }}">{{ cpu_brand }}</option>
+            {% endfor %}
+        </select>
+        <br>
+        <label for="cpu_speed">CPU Speed (GHz):</label>
+        <input type="number" name="cpu_speed" id="cpu_speed" step="0.1">
+        <br>
+        <label for="hdd">HDD (GB):</label>
+        <input type="number" name="hdd" id="hdd">
+        <br>
+        <label for="ssd">SSD (GB):</label>
+        <input type="number" name="ssd" id="ssd">
+        <br>
+        <label for="gpu_brand">GPU Brand:</label>
+        <select name="gpu_brand" id="gpu_brand">
+            {% for gpu_brand in gpu_brands %}
+                <option value="{{ gpu_brand }}">{{ gpu_brand }}</option>
+            {% endfor %}
+        </select>
+        <br>
+        <label for="os">Operating System:</label>
+        <select name="os" id="os">
+            {% for os in os_options %}
+                <option value="{{ os }}">{{ os }}</option>
+            {% endfor %}
+        </select>
+        <br>
+        <button type="submit">Predict Price</button>
+    </form>
+
+    {% if prediction %}
+        <h2>{{ prediction }}</h2>
+    {% endif %}
+</body>
+</html>
