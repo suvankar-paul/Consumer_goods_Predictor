@@ -1,2 +1,2 @@
 # Car Price Prediction
-In this Project you can predict the price of consumer goods like car. but now only you can predict car only. In future more option will be added.
+This project focuses on building a machine learning model to predict the price of a car based on various features like brand, model, mileage, fuel type, transmission, and more. It is designed to assist sellers, buyers, and dealerships in estimating accurate car prices using data-driven techniques.
